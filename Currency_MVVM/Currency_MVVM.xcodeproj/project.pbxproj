@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44AB925B229E821500E3DE96 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB9259229E821400E3DE96 /* MyTableViewCell.swift */; };
+		44AB925C229E821500E3DE96 /* CurrencyRatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB925A229E821500E3DE96 /* CurrencyRatesViewController.swift */; };
+		44AB9261229E850800E3DE96 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB9260229E850800E3DE96 /* CurrencyViewModel.swift */; };
 		A78FE2DE93F1AC22583387DA /* Pods_Currency_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB6BE3EECEF99BEFAB2FCF9 /* Pods_Currency_MVVM.framework */; };
 		BAF2429B229F24FF00E33DC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2429A229F24FF00E33DC8 /* AppDelegate.swift */; };
-		BAF2429D229F24FF00E33DC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2429C229F24FF00E33DC8 /* ViewController.swift */; };
 		BAF242A2229F250700E33DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF242A1229F250700E33DC8 /* Assets.xcassets */; };
 		BAF242A5229F250700E33DC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF242A3229F250700E33DC8 /* LaunchScreen.storyboard */; };
 		BAF242B3229F268600E33DC8 /* Rates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF242B2229F268600E33DC8 /* Rates.swift */; };
@@ -19,11 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44AB9259229E821400E3DE96 /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTableViewCell.swift; path = ../../../Currency_/Currency_/MyTableViewCell.swift; sourceTree = "<group>"; };
+		44AB925A229E821500E3DE96 /* CurrencyRatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrencyRatesViewController.swift; path = ../../../Currency_/Currency_/CurrencyRatesViewController.swift; sourceTree = "<group>"; };
+		44AB9260229E850800E3DE96 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 		9FB6BE3EECEF99BEFAB2FCF9 /* Pods_Currency_MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Currency_MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8EB1A56802DF426491CE6C8 /* Pods-Currency_MVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Currency_MVVM.debug.xcconfig"; path = "Target Support Files/Pods-Currency_MVVM/Pods-Currency_MVVM.debug.xcconfig"; sourceTree = "<group>"; };
 		BAF24297229F24FF00E33DC8 /* Currency_MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Currency_MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF2429A229F24FF00E33DC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BAF2429C229F24FF00E33DC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BAF242A1229F250700E33DC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAF242A4229F250700E33DC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAF242A6229F250700E33DC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,13 +50,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44AB925F229E84EE00E3DE96 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				44AB9260229E850800E3DE96 /* CurrencyViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
 		49682C493C9DEE57B270A459 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				A8EB1A56802DF426491CE6C8 /* Pods-Currency_MVVM.debug.xcconfig */,
 				EA5D1C8F6DFDE112FC8594F5 /* Pods-Currency_MVVM.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -85,7 +96,7 @@
 		BAF24299229F24FF00E33DC8 /* Currency_MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				BAF242B1229F264C00E33DC8 /* view_model */,
+				44AB925F229E84EE00E3DE96 /* viewmodel */,
 				BAF242B0229F263E00E33DC8 /* view */,
 				BAF242AF229F262800E33DC8 /* Services */,
 				BAF242AE229F261D00E33DC8 /* model */,
@@ -116,18 +127,12 @@
 		BAF242B0229F263E00E33DC8 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				BAF2429C229F24FF00E33DC8 /* ViewController.swift */,
+				44AB925A229E821500E3DE96 /* CurrencyRatesViewController.swift */,
+				44AB9259229E821400E3DE96 /* MyTableViewCell.swift */,
 				BAF242A3229F250700E33DC8 /* LaunchScreen.storyboard */,
 				BAF242B8229F277600E33DC8 /* Main.storyboard */,
 			);
 			path = view;
-			sourceTree = "<group>";
-		};
-		BAF242B1229F264C00E33DC8 /* view_model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view_model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,11 +263,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAF2429D229F24FF00E33DC8 /* ViewController.swift in Sources */,
 				BAF242B3229F268600E33DC8 /* Rates.swift in Sources */,
 				BAF2429B229F24FF00E33DC8 /* AppDelegate.swift in Sources */,
+				44AB925C229E821500E3DE96 /* CurrencyRatesViewController.swift in Sources */,
+				44AB9261229E850800E3DE96 /* CurrencyViewModel.swift in Sources */,
 				BAF242B6229F273000E33DC8 /* ServiceProtocol.swift in Sources */,
 				BAF242B7229F273000E33DC8 /* CurrencyRatesService.swift in Sources */,
+				44AB925B229E821500E3DE96 /* MyTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

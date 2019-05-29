@@ -11,12 +11,8 @@ import RxAlamofire
 import SwiftyJSON
 
 class CurrencyRatesService: Service {
-    var viewPresenter : CurrencyViewPresenterProtocol?
-    
-    func setPresenter(viewPresenter : CurrencyViewPresenterProtocol) {
-        self.viewPresenter = viewPresenter
-    }
-    func getRates(url : String) {
+
+    func getRates(url : String ,completionHandler : @escaping (Rates) -> Void) {
         var rates :Rates?
         RxAlamofire.requestJSON(.get , url)
         .asObservable()
@@ -24,8 +20,9 @@ class CurrencyRatesService: Service {
                 let json = JSON(json)
             rates = Rates(base: json["base"].stringValue, rates: json["rates"].dictionaryObject as! [String : Double], date: json["date"].stringValue)
             }
-            , onError: { e in print(e)} , onCompleted: { [weak self] in
-                self?.viewPresenter?.setData(rates: rates!)
+            , onError: { e in print(e)}
+            , onCompleted: { [weak self] in
+                completionHandler(rates!)
                 print("\(rates!)")
         })
         

@@ -10,9 +10,9 @@ import UIKit
 
 class MyTableViewCell: UITableViewCell {
     @IBOutlet weak var mainLbl: UILabel!
-    
     @IBOutlet weak var secondryLbl: UILabel!
     @IBOutlet weak var fractionLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

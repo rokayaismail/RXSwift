@@ -12,22 +12,18 @@ import RxSwift
 
 class CurrencyRatesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var viewPresenter : CurrencyViewPresenterProtocol?
+    var viewModel : CurrencyViewModel?
     let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        viewPresenter = CurrencyViewPresenter(view: self)
-
-
-        
-
-        
+        viewModel = CurrencyViewModel()
+        viewRates()
     }
-    func viewRates(rates : Rates){
-        Observable.of(rates.rates)
+    func viewRates(){
+        viewModel?.observable!
             .bind(to: tableView.rx.items(cellIdentifier: "tableCell", cellType: MyTableViewCell.self)) { (row, element, cell) in
-                cell.mainLbl?.text = "\(rates.base)"
+                cell.mainLbl?.text = "EUR"
                 cell.fractionLbl?.text = "\(element.value)"
                 cell.secondryLbl?.text = "\(element.key)"
             }
